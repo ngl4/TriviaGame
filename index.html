@@ -29,13 +29,15 @@
 
 <body class="jumbotron">
 
-    <div class="container">
+    <div id="start-game-box" class="container">
 
         <button id="start-button">START</button>
 
     </div>
 
     <div id="form-questions" class="container">
+
+        <div>The time you have left is: <span id="timers"></span></div>
 
         <p>What has four legs?</p>
         <form action="" method="post">
@@ -70,7 +72,7 @@
             <span id="correct-answer"></span>
         </div>
         <br>
-        <div id="wrong-answer">Incorrect Answers:
+        <div id="incorrect-answer">Incorrect Answers:
             <span id="wrong-answer"></span>
         </div>
         <br>
