@@ -3,7 +3,6 @@ var gameStarted = false;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var noAnswer = 0;
-var submitClick = false;
 
 //  Variable that will hold our setInterval that runs the stopwatch
 var intervalId;
@@ -27,7 +26,7 @@ $(document).ready(function() {
 
     //Submit button is clicked
     $("#submit").click(function() {
-      submitClick = true;
+      stop(); //Timers stop once submit button is clicked
       displayAnswers();
     });
   });
@@ -47,9 +46,6 @@ function decrement() {
   if (time === -1) {
     stop();
     console.log("Time's Up");
-    if (submitClick) {
-      displayAnswers(); //TODO: Display answers only if the submit button is not clicked!
-    }
   }
 }
 
@@ -84,9 +80,10 @@ function displayAnswers() {
     noAnswer++;
   }
 
-  var answer3 = $("input[type=checkbox][name=joke3]:checked").val();
-  if (answer3 === "bed" && answer3 === "snake") {
-    correctAnswers++; //TODO: Check this logic again!!!
+  var answer3 = $("input[type=checkbox][name=joke3-1]:checked").val();
+  var answer4 = $("input[type=checkbox][name=joke3-3]:checked").val();
+  if (answer3 === "bed" && answer4 === "snake") {
+    correctAnswers++; //TODO 2: Check this logic again!!!
     console.log(answer3);
   } else if (answer3 === "clock" || answer3 === "bed" || answer3 === "snake") {
     incorrectAnswers++;
