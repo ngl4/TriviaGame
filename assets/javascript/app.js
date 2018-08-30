@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     if (!timerStart) {
       console.log("Timer has started!");
-      start();  
+      start();
     }
 
     //Submit button is clicked
@@ -73,15 +73,55 @@ function startGame() {
   $("#final-answer").hide();
 }
 
-function count() {
+function decrement() {
   decrementTime = time--;
   $("#timers").text(decrementTime);
-  
+
+  if (time === -1) {
+    stop();
+    console.log("Time's Up");
+    $("#form-questions").hide();
+    $("#final-answer").show();
+
+    var answer1 = $("input[type=radio][name=joke]:checked").val();
+    if (answer1 === "bed") {
+      correctAnswers++;
+    } else if (answer1 === "clock" || answer1 === "snake") {
+      incorrectAnswers++;
+    } else {
+      noAnswer++;
+    }
+
+    var answer2 = $("input[type=radio][name=joke2]:checked").val();
+    if (answer2 === "snake") {
+      correctAnswers++;
+    } else if (answer2 === "clock" || answer2 === "bed") {
+      incorrectAnswers++;
+    } else {
+      noAnswer++;
+    }
+
+    var answer3 = $("input[type=checkbox][name=joke3]:checked").val();
+    if (answer3 === "bed" && answer3 === "snake") {
+      correctAnswers++;
+    } else if (
+      answer3 === "clock" ||
+      answer3 === "bed" ||
+      answer3 === "snake"
+    ) {
+      incorrectAnswers++;
+    } else {
+      noAnswer++;
+    }
+    $("#correct-answer").text(correctAnswers);
+    $("#incorrect-answer").text(incorrectAnswers);
+    $("#no-answer").text(noAnswer);
+  }
 }
 
 //Use setInterval to start the count here
 function start() {
-  intervalId = setInterval(count, 1000);
+  intervalId = setInterval(decrement, 1000);
 }
 
 function stop() {
@@ -89,11 +129,6 @@ function stop() {
 }
 
 
-//END GAME
-
-//Timers get to ZERO
-//the forms disappear
-//the final answer page appears
-
 
 //Create a "RESTART" button to allow users to replay the game
+//Shorten code using function for repetitive code 
