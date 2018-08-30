@@ -1,27 +1,51 @@
 //Declare Variables
 var gameStarted = false;
-var startButton;
-var formsList;
-var finalAnswers;
+var correctAnswers = 0;
+var incorrectAnswers =0;
+var noAnswer = 0;
+
+//  Variable that will hold our setInterval that runs the stopwatch
+var intervalId;
+var timerStart = false;
+var time = 30;
 
 //Game started once HTML is completely loaded
 $(document).ready(function() {
   startGame();
 
-//START button is clicked
+  //START button is clicked
   $("#start-button").click(function() {
     $("#start-button").hide();
     $("#form-questions").show();
 
+    if (!timerStart) {
+        console.log("Timer has started!");
+        start();
+    }
 
-//Submit button is clicked 
-    $("#submit").click(function(){
-        $("#form-questions").hide();
-        $("#final-answer").show();
+    //Submit button is clicked
+    $("#submit").click(function() {
+      $("#form-questions").hide();
+      $("#final-answer").show();
+      
+      var answer1 = $("input[type=radio][name=joke]:checked").val();
+      if (answer1 === "bed") {
 
+        correctAnswers++;
+        console.log(correctAnswers);
+
+      }else if (answer1 === "clock" || answer1 === "snake" ){
+          
+        incorrectAnswers++;
+        console.log(incorrectAnswers);
+        
+      }else {
+
+        noAnswer++;
+        console.log(noAnswer);
+      }
+      
     });
-
-
   });
 });
 
@@ -30,6 +54,16 @@ function startGame() {
   $("#start-button").show();
   $("#form-questions").hide();
   $("#final-answer").hide();
+}
+
+function count() {
+    var decrementTime = time--;
+    $("#timers").text(decrementTime);
+}
+
+//Use setInterval to start the count here
+function start() {
+    intervalId = setInterval(count, 1000);
 }
 
 //START GAME
