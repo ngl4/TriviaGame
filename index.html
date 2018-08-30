@@ -27,7 +27,12 @@
 
 </head>
 
-<body class="jumbotron">
+<body>
+
+    <div class="jumbotron">
+
+        <div class="container">Trivia Game on Jokes!</div>
+    </div>
 
     <div id="start-game-box" class="container">
 
@@ -48,16 +53,16 @@
 
         <p>What has only one foot?</p>
         <form action="" method="post">
-            <input type="radio" name="joke" value="bed" /> A Bed
-            <input type="radio" name="joke" value="clock" /> A Clock
-            <input type="radio" name="joke" value="snake" /> A Snake
+            <input type="radio" name="joke2" value="bed" /> A Bed
+            <input type="radio" name="joke2" value="clock" /> A Clock
+            <input type="radio" name="joke2" value="snake" /> A Snake
         </form>
 
-        <p>What has legs?</p>
+        <p>What have legs?</p>
         <form action="" method="post">
-            <input type="checkbox" name="joke" value="bed" /> A Bed
-            <input type="checkbox" name="joke" value="clock" /> A Clock
-            <input type="checkbox" name="joke" value="snake" /> A Snake
+            <input type="checkbox" name="joke3" value="bed" /> A Bed
+            <input type="checkbox" name="joke3" value="clock" /> A Clock
+            <input type="checkbox" name="joke3" value="snake" /> A Snake
         </form>
 
         <button id="submit">Submit!</button>
@@ -72,11 +77,11 @@
             <span id="correct-answer"></span>
         </div>
         <br>
-        <div id="incorrect-answer">Incorrect Answers:
-            <span id="wrong-answer"></span>
+        <div>Incorrect Answers:
+            <span id="incorrect-answer"></span>
         </div>
         <br>
-        <div id="no-answer">Unselected Answers:
+        <div>Unselected Answers:
             <span id="no-answer"></span>
         </div>
         <br>
