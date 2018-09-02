@@ -46,6 +46,7 @@ function decrement() {
   if (time === -1) {
     stop();
     console.log("Time's Up");
+    displayAnswers();
   }
 }
 
@@ -80,28 +81,30 @@ function displayAnswers() {
     noAnswer++;
   }
 
-  var answer3 = $("input[type=checkbox][name=joke3-1]:checked").val();
-  var answer4 = $("input[type=checkbox][name=joke3-3]:checked").val();
-  if (answer3 === "bed" && answer4 === "snake") {
-    correctAnswers++; //TODO 2: Check this logic again!!!
-    console.log(answer3);
-  } else if (answer3 === "clock" || answer3 === "bed" || answer3 === "snake") {
-    incorrectAnswers++;
-  } else {
+  var answer3o1 = $("input[type=checkbox][name=joke3-1]:checked").val();
+  var answer3o2 = $("input[type=checkbox][name=joke3-2]:checked").val();
+  var answer3o3 = $("input[type=checkbox][name=joke3-3]:checked").val();
+
+  console.log(answer3o1);
+  console.log(answer3o2);
+  console.log(answer3o3);
+
+  if (answer3o1 && answer3o3 && !answer3o2) {
+    correctAnswers++; 
+  } else if (!answer3o1 && !answer3o2 && !answer3o3) {
     noAnswer++;
+  } else {
+    incorrectAnswers++;
   }
   $("#correct-answer").text(correctAnswers);
   $("#incorrect-answer").text(incorrectAnswers);
   $("#no-answer").text(noAnswer);
 }
 
-//Restart Button 
+//Restart Button
 var restartButton = $("<button>");
 restartButton.text("RESTART");
 $("#final-answers").append(restartButton);
 restartButton.click(function() {
   location.reload();
 });
-
-
-//Fix the TODOs logic problem!!! 
