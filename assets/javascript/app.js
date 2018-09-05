@@ -63,81 +63,81 @@ function displayAnswers() {
   $("#form-questions").hide();
   $("#final-answers").show();
 
-  var answer1 = $("input[type=radio][name=joke]:checked").val();
+  var answer1 = $("input[type=radio][name=question1]:checked").val();
   if (answer1 === "Brazil") {
     correctAnswers++;
   } else if (answer1 === "Argentina" || answer1 === "Mexico") {
     incorrectAnswers++;
     var textCorrectAnswer = $("<p>");
-    textCorrectAnswer.text("CORRECT ANSWER: The largest coffee growing country in the world: BRAZIL");
+    textCorrectAnswer.text("Q1 CORRECT ANSWER: The largest coffee growing country in the world: BRAZIL");
     $("#display-correct-answer").append(textCorrectAnswer);
   } else {
     noAnswer++;
     var textCorrectAnswer = $("<p>");
-    textCorrectAnswer.text("CORRECT ANSWER: The largest coffee growing country in the world: BRAZIL");
+    textCorrectAnswer.text("Q1 CORRECT ANSWER: The largest coffee growing country in the world: BRAZIL");
     $("#display-correct-answer").append(textCorrectAnswer);
   }
 
-  var answer2 = $("input[type=radio][name=joke2]:checked").val();
+  var answer2 = $("input[type=radio][name=question2]:checked").val();
   if (answer2 === "Canada") {
     correctAnswers++;
   } else if (answer2 === "United States of America" || answer2 === "Russia") {
     incorrectAnswers++;
     var textCorrectAnswer2 = $("<p>");
-    textCorrectAnswer2.text("CORRECT ANSWER: The country ranks second in terms of land area in the world: CANADA");
+    textCorrectAnswer2.text("Q2 CORRECT ANSWER: The country ranks second in terms of land area in the world: CANADA");
     $("#display-correct-answer").append(textCorrectAnswer2);
   } else {
     noAnswer++;
     var textCorrectAnswer2 = $("<p>");
-    textCorrectAnswer2.text("CORRECT ANSWER: The country ranks second in terms of land area in the world: CANADA");
+    textCorrectAnswer2.text("Q2 CORRECT ANSWER: The country ranks second in terms of land area in the world: CANADA");
     $("#display-correct-answer").append(textCorrectAnswer2);
   }
 
-  var answer3o1 = $("input[type=checkbox][name=joke3-1]:checked").val();
-  var answer3o2 = $("input[type=checkbox][name=joke3-2]:checked").val();
-  var answer3o3 = $("input[type=checkbox][name=joke3-3]:checked").val();
+  var answer3o1 = $("input[type=checkbox][name=question3-1]:checked").val();
+  var answer3o2 = $("input[type=checkbox][name=question3-2]:checked").val();
+  var answer3o3 = $("input[type=checkbox][name=question3-3]:checked").val();
 
   if (answer3o1 && answer3o3 && !answer3o2) {
     correctAnswers++;
   } else if (!answer3o1 && !answer3o2 && !answer3o3) {
     noAnswer++;
     var textCorrectAnswer3 = $("<p>");
-    textCorrectAnswer3.text("CORRECT ANSWER: The countries have the largest production of manganese in the world: CHINA and SOUTH AFRICA");
+    textCorrectAnswer3.text("Q3 CORRECT ANSWER: The countries have the largest production of manganese in the world: CHINA and SOUTH AFRICA");
     $("#display-correct-answer").append(textCorrectAnswer3);
   } else {
     incorrectAnswers++;
     var textCorrectAnswer3 = $("<p>");
-    textCorrectAnswer3.text("CORRECT ANSWER: The countries have the largest production of manganese in the world: CHINA and SOUTH AFRICA");
+    textCorrectAnswer3.text("Q3 CORRECT ANSWER: The countries have the largest production of manganese in the world: CHINA and SOUTH AFRICA");
     $("#display-correct-answer").append(textCorrectAnswer3);  }
 
-  var answer4 = $("input[type=radio][name=joke4]:checked").val();
+  var answer4 = $("input[type=radio][name=question4]:checked").val();
   if (answer4 === "Malaysia") {
     correctAnswers++;
   } else if (answer4 === "Thailand" || answer4 === "Singapore") {
     incorrectAnswers++;
     var textCorrectAnswer4 = $("<p>");
-    textCorrectAnswer4.text("CORRECT ANSWER: The country has the largest production of rubber in the world: MALAYSIA");
+    textCorrectAnswer4.text("Q4 CORRECT ANSWER: The country has the largest production of rubber in the world: MALAYSIA");
     $("#display-correct-answer").append(textCorrectAnswer4);
 
   } else {
     noAnswer++;
     var textCorrectAnswer4 = $("<p>");
-    textCorrectAnswer4.text("CORRECT ANSWER: The country has the largest production of rubber in the world: MALAYSIA");
+    textCorrectAnswer4.text("Q4 CORRECT ANSWER: The country has the largest production of rubber in the world: MALAYSIA");
     $("#display-correct-answer").append(textCorrectAnswer4);
   }
 
-  var answer5 = $("input[type=radio][name=joke5]:checked").val();
+  var answer5 = $("input[type=radio][name=question5]:checked").val();
   if (answer5 === "Japan") {
     correctAnswers++;
   } else if (answer5 === "Korea" || answer5 === "Vietnam") {
     incorrectAnswers++;
     var textCorrectAnswer5 = $("<p>");
-    textCorrectAnswer5.text("CORRECT ANSWER: The country also has the name of 'the Land of Rising Sun' is: JAPAN");
+    textCorrectAnswer5.text("Q5 CORRECT ANSWER: The country also has the name of 'the Land of Rising Sun' is: JAPAN");
     $("#display-correct-answer").append(textCorrectAnswer5);
   } else {
     noAnswer++;
     var textCorrectAnswer5 = $("<p>");
-    textCorrectAnswer5.text("CORRECT ANSWER: The country also has the name of 'the Land of Rising Sun' is: JAPAN");
+    textCorrectAnswer5.text("Q5 CORRECT ANSWER: The country also has the name of 'the Land of Rising Sun' is: JAPAN");
     $("#display-correct-answer").append(textCorrectAnswer5);
   }
 
