@@ -21,7 +21,24 @@
         body {
 
             font-family: 'Gloria Hallelujah', cursive;
+            background: url("assets/images/background.jpg");
+            background-size: 100%;
+            font-size: 20px;
 
+        }
+
+        #header {
+
+            opacity: 0.5;
+        }
+
+        #title {
+
+            font-size: 35px;
+        }
+
+        .card {
+            opacity: .8;
         }
     </style>
 
@@ -29,62 +46,87 @@
 
 <body>
 
-    <div class="jumbotron">
+    <div id="header" class="jumbotron">
 
-        <div class="container">Trivia Game on Jokes!</div>
+        <div id="title" class="container text-center text-black">Trivia Game: Which Countries in the World?!</div>
     </div>
 
-    <div id="start-game-box" class="container">
+    <div id="start-game-box" class="container text-center">
 
-        <button id="start-button">START</button>
-
-    </div>
-
-    <div id="form-questions" class="container">
-
-        <div>The time you have left is: <span id="timers"></span></div>
-
-        <p>What has four legs?</p>
-        <form action="" method="post">
-            <input type="radio" name="joke" value="bed" /> A Bed
-            <input type="radio" name="joke" value="clock" /> A Clock
-            <input type="radio" name="joke" value="snake" /> A Snake
-        </form>
-
-        <p>What has only one foot?</p>
-        <form action="" method="post">
-            <input type="radio" name="joke2" value="bed" /> A Bed
-            <input type="radio" name="joke2" value="clock" /> A Clock
-            <input type="radio" name="joke2" value="snake" /> A Snake
-        </form>
-
-        <p>What have legs?</p>
-        <form action="" method="post">
-            <input type="checkbox" name="joke3" value="bed" /> A Bed
-            <input type="checkbox" name="joke3" value="clock" /> A Clock
-            <input type="checkbox" name="joke3" value="snake" /> A Snake
-        </form>
-
-        <button id="submit">Submit!</button>
+        <button id="start-button" class="btn btn-info">START</button>
 
     </div>
 
-    <div id="final-answers" class="container">
-        <div>Thank You For Doing The Survey!</div>
-        <br>
-        <br>
-        <div>Correct Answers:
-            <span id="correct-answer"></span>
+    <div id="form-questions" class="container text-white">
+
+        <div class="card bg-secondary text-white w-75 p-5">
+
+            <div>The time you have left is:
+                <span id="timers"></span>
+            </div>
+            <br>
+
+            <p>What is the largest coffee growing country in the world?</p>
+            <form action="" method="post">
+                <input type="radio" name="joke" value="Brazil" /> Brazil
+                <input type="radio" name="joke" value="Argentina" /> Argentina
+                <input type="radio" name="joke" value="Mexico" /> Mexico
+            </form>
+
+            <p>Which country ranks second in terms of land area in the world?</p>
+            <form action="" method="post">
+                <input type="radio" name="joke2" value="United States of America" /> United States of America
+                <input type="radio" name="joke2" value="Russia" /> Russia
+                <input type="radio" name="joke2" value="Canada" /> Canada
+            </form>
+
+            <p>Which countries are the largest producer of manganese in the world?</p>
+            <form action="" method="post">
+                <input type="checkbox" name="joke3-1" value="China" /> China
+                <input type="checkbox" name="joke3-2" value="India" /> India
+                <input type="checkbox" name="joke3-3" value="South Africa" /> South Africa
+            </form>
+
+            <p>Which country is the largest producer of rubber in the world?</p>
+            <form action="" method="post">
+                <input type="radio" name="joke4" value="Thailand" /> Thailand
+                <input type="radio" name="joke4" value="Malaysia" /> Malaysia
+                <input type="radio" name="joke4" value="Singapore" /> Singapore
+            </form>
+
+            <p>Which country is also called 'the Land of Rising Sun'?</p>
+            <form action="" method="post">
+                <input type="radio" name="joke5" value="Vietnam" /> Vietnam
+                <input type="radio" name="joke5" value="Korea" /> Korea
+                <input type="radio" name="joke5" value="Japan" /> Japan
+            </form>
+            <br>
+            <br>
+
+            <button id="submit" class="btn btn-info w-25">Submit!</button>
         </div>
-        <br>
-        <div>Incorrect Answers:
-            <span id="incorrect-answer"></span>
+
+    </div>
+
+    <div class="container text-white">
+
+        <div id="final-answers" class="card bg-secondary text-white w-50 p-5">
+            <div>Thank You For Doing The Survey!</div>
+            <br>
+            <br>
+            <div>Correct Answers:
+                <span id="correct-answer"></span>
+            </div>
+            <br>
+            <div>Incorrect Answers:
+                <span id="incorrect-answer"></span>
+            </div>
+            <br>
+            <div>Unselected Answers:
+                <span id="no-answer"></span>
+            </div>
+            <br>
         </div>
-        <br>
-        <div>Unselected Answers:
-            <span id="no-answer"></span>
-        </div>
-        <br>
     </div>
 
 
