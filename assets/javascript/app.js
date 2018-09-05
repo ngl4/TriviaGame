@@ -7,10 +7,10 @@ var noAnswer = 0;
 //  Variable that will hold our setInterval that runs the stopwatch
 var intervalId;
 var timerStart = false;
-var time = 5;
+var time = 30;
 var decrementTime;
 
-//Game started once HTML is completely loaded
+
 $(document).ready(function() {
   startGame();
 
@@ -64,18 +64,18 @@ function displayAnswers() {
   $("#final-answers").show();
 
   var answer1 = $("input[type=radio][name=joke]:checked").val();
-  if (answer1 === "bed") {
+  if (answer1 === "Brazil") {
     correctAnswers++;
-  } else if (answer1 === "clock" || answer1 === "snake") {
+  } else if (answer1 === "Argentina" || answer1 === "Mexico") {
     incorrectAnswers++;
   } else {
     noAnswer++;
   }
 
   var answer2 = $("input[type=radio][name=joke2]:checked").val();
-  if (answer2 === "snake") {
+  if (answer2 === "Canada") {
     correctAnswers++;
-  } else if (answer2 === "clock" || answer2 === "bed") {
+  } else if (answer2 === "United States of America" || answer2 === "Russia") {
     incorrectAnswers++;
   } else {
     noAnswer++;
@@ -85,25 +85,47 @@ function displayAnswers() {
   var answer3o2 = $("input[type=checkbox][name=joke3-2]:checked").val();
   var answer3o3 = $("input[type=checkbox][name=joke3-3]:checked").val();
 
-  console.log(answer3o1);
-  console.log(answer3o2);
-  console.log(answer3o3);
-
   if (answer3o1 && answer3o3 && !answer3o2) {
-    correctAnswers++; 
+    correctAnswers++;
   } else if (!answer3o1 && !answer3o2 && !answer3o3) {
     noAnswer++;
   } else {
     incorrectAnswers++;
   }
-  $("#correct-answer").text(correctAnswers);
-  $("#incorrect-answer").text(incorrectAnswers);
-  $("#no-answer").text(noAnswer);
+
+  var answer4 = $("input[type=radio][name=joke4]:checked").val();
+  if (answer4 === "Malaysia") {
+    correctAnswers++;
+  } else if (answer4 === "Thailand" || answer4 === "Singapore") {
+    incorrectAnswers++;
+  } else {
+    noAnswer++;
+  }
+
+  var answer5 = $("input[type=radio][name=joke5]:checked").val();
+  if (answer5 === "Japan") {
+    correctAnswers++;
+  } else if (answer5 === "Korea" || answer5 === "Vietnam") {
+    incorrectAnswers++;
+  } else {
+    noAnswer++;
+  }
+
+  $("#correct-answer")
+  .text(correctAnswers)
+  .addClass("text-white");
+$("#incorrect-answer")
+  .text(incorrectAnswers)
+  .addClass("text-white");
+$("#no-answer")
+  .text(noAnswer)
+  .addClass("text-white");
 }
 
 //Restart Button
 var restartButton = $("<button>");
 restartButton.text("RESTART");
+restartButton.addClass("btn btn-info w-25");
 $("#final-answers").append(restartButton);
 restartButton.click(function() {
   location.reload();
