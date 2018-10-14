@@ -3,7 +3,8 @@
 This is a short multiple choice survey-liked game with a timer. This is a small project to experiment with JavaScript timer function and jQuery show() and hide() methods. click [here](https://ngl4.github.io/TriviaGame/) to play the game!
 
 Here is the Demo: 
-<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40" />
+
+<img src="https://github.com/ngl4/TriviaGame/blob/master/assets/images/TriviaGame1.gif" width="891" height="500" />
 
 ![](https://github.com/ngl4/TriviaGame/blob/master/assets/images/TriviaGame1.gif)
 
