@@ -4,11 +4,7 @@ This is a short multiple choice survey-liked game with a timer. This is a small 
 
 Here is the Demo: 
 
-<img src="https://github.com/ngl4/TriviaGame/blob/master/assets/images/TriviaGame1.gif" width="446" height="250" />
-
-![](https://github.com/ngl4/TriviaGame/blob/master/assets/images/TriviaGame1.gif)
-
-
+<img src="https://github.com/ngl4/TriviaGame/blob/master/assets/images/TriviaGame1.gif" width="624" height="350" />
 
 ### Reflection: 
 
